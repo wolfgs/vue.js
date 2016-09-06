@@ -1,0 +1,234 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>广州亦恪网络科技有限公司</title>
+		<link rel="stylesheet" href="css/aui.2.0.css" />
+		<link rel="stylesheet" href="css/cui.css" />
+		<script type="text/javascript" src="script/vue.min.js"></script>
+	</head>
+
+	<body>
+		<div id="wrap">
+			<div id="header">
+				<ol>
+					<li class="header-li">
+						<div class="nice-select" name="nice-select">
+							<input type="text" value="全部分组" readonly>
+							<ul>
+								<li data-value="1">分组一</li>
+								<li data-value="2">分组二</li>
+								<li data-value="3">分组三</li>
+								<li data-value="4">分组四</li>
+							</ul>
+						</div>
+						<div class="h20"></div>
+					</li>
+					<li class="header-li">
+						<div class="nice-select" name="nice-select">
+							<input type="text" value="前部大棚" readonly>
+							<ul>
+								<li data-value="1">大棚一</li>
+								<li data-value="2">分组二</li>
+								<li data-value="3">分组三</li>
+								<li data-value="4">分组四</li>
+							</ul>
+						</div>
+						<div class="h20"></div>
+					</li>
+					<li class="header-li" style="text-align: right;">刷新</li>
+				</ol>
+			</div>
+			<div id="main">
+				<div class="aui-content aui-margin-b-15 a-content">
+					<ul class="aui-list">
+						<li class="aui-list-header">
+							<div class="aui-list-header-page">{{headerArr.groupName}}</div>
+							<div class="aui-list-header-title">{{headerArr.foodName}}</div>
+						</li>
+						<li class="aui-list-item" style="background-color: #ed7b53;color: white;">
+							<div class="aui-list-item-inner aui-list-item-rco">
+								<ul>
+									<li>日照</li>
+									<li class="textcontent">{{sunshine}}</li>
+									<li class="textright">Klux</li>
+								</ul>
+							</div>
+						</li>
+						<li class="aui-list-item" style="background-color: #5ea62b;color: white;">
+							<div class="aui-list-item-inner aui-list-item-rco">
+								<ul>
+									<li>CO₂</li>
+									<li class="textcontent">{{co2}}</li>
+									<li class="textright">PPM</li>
+								</ul>
+							</div>
+						</li>
+						<li class="aui-list-item aui-list-item-k">
+							<div class="aui-list-item-inner aui-list-item-kong">
+								<ul>
+									<li v-for="atmosphere in atmosphereArr">
+										空气{{$index}} <span>{{atmosphere.Centigrade}}</span> C <span>{{atmosphere.Percentage}}</span>%
+									</li>
+
+								</ul>
+
+							</div>
+						</li>
+						<li class="aui-list-item aui-list-item-t" v-for="soil in soilArr">
+							<div class="aui-list-item-inner aui-list-item-rco">
+								<ul>
+									<li>土壤{{$index}}</li>
+									<li class="textcontent"><span>{{soil.Centigrade}}</span>C</li>
+									<li class="textright"><span>{{soil.Percentage}}</span>%</li>
+								</ul>
+
+							</div>
+
+						</li>
+
+						<li class="aui-list-item" v-for="othertool in otherToolArr">
+							<div class="aui-list-title">{{othertool.name}}</div>
+							<div class="aui-list-content">
+								<ul>
+									<li v-for="tool in othertool.stateArr">{{$index+1}} <span>{{tool.name}}</span></li>
+								</ul>
+							</div>
+						</li>
+						<li class="aui-list-footer">
+							操作
+						</li>
+					</ul>
+				</div>
+
+			</div>
+			<footer class="aui-bar aui-bar-tab" id="footer">
+				<div class="aui-bar-tab-item aui-active" tapmode>
+					<div class="aui-bar-tab-label">全景</div>
+				</div>
+				<div class="aui-bar-tab-item" tapmode>
+					<div class="aui-bar-tab-label">大棚</div>
+				</div>
+				<div class="aui-bar-tab-item" tapmode>
+					<div class="aui-bar-tab-label">设置</div>
+				</div>
+			</footer>
+
+		</div>
+	</body>
+	<script type="text/javascript" src="script/api.js"></script>
+	<script type="text/javascript" src="script/aui-tab.js"></script>
+	<script type="text/javascript" src="script/jquery.js"></script>
+
+	<script type="text/javascript">
+		var main = new Vue({
+			el: '#main',
+			data: {
+				headerArr: {
+					groupName: '大棚2',
+					foodName: "蔬菜2"
+				},
+				sunshine: '50.3',
+				co2: '10.2',
+				atmosphereArr: [{
+					name: '空气1',
+					Centigrade: '30.3',
+					Percentage: '60'
+				}, {
+					name: '空气2',
+					Centigrade: '40.3',
+					Percentage: '80'
+				}, {
+					name: '空气3',
+					Centigrade: '60.3',
+					Percentage: '90'
+				}, {
+					name: '空气4',
+					Centigrade: '44.3',
+					Percentage: '85'
+				}],
+				soilArr: [{
+					name: '土壤1',
+					Centigrade: '35.3',
+					Percentage: '65'
+				}, {
+					name: '土壤1',
+					Centigrade: '35.3',
+					Percentage: '65'
+				}, {
+					name: '土壤1',
+					Centigrade: '35.3',
+					Percentage: '65'
+				}],
+				otherToolArr: [{
+					name: '窗机',
+					stateArr: [{
+						name: '未知'
+					}, {
+						name: '未知'
+					}, {
+						name: '关闭'
+					}, {
+						name: '开启'
+					}],
+				}, {
+					name: '卷帘',
+					stateArr: [{
+						name: '未知'
+					}, {
+						name: '未知'
+					}],
+				}, {
+					name: '风机',
+					stateArr: [{
+						name: '未知'
+					}, {
+						name: '未知'
+					}],
+				}, {
+					name: '滴灌',
+					stateArr: [{
+						name: '未知'
+					}, {
+						name: '未知'
+					}],
+				}],
+			}
+		});
+		$('[name="nice-select"]').click(function(e) {
+			$('[name="nice-select"]').find('ul').hide();
+			$(this).find('ul').show();
+			e.stopPropagation();
+		});
+		$('[name="nice-select"] li').hover(function(e) {
+			$(this).toggleClass('on');
+			e.stopPropagation();
+		});
+		$('[name="nice-select"] li').click(function(e) {
+			var val = $(this).text();
+			$(this).parents('[name="nice-select"]').find('input').val(val);
+			$('[name="nice-select"] ul').hide();
+			e.stopPropagation();
+			alert(00)
+		});
+		$(document).click(function() {
+			$('[name="nice-select"] ul').hide();
+		});
+		apiready = function() {
+			api.parseTapmode();
+		}
+		var tab = new auiTab({
+			element: document.getElementById("footer")
+		}, function(ret) {
+			//			console.log(ret);
+			if(ret) {
+
+				//				document.getElementById("demo").textContent = ret.index;
+			}
+		});
+	</script>
+
+</html>
