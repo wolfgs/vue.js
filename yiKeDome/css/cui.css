@@ -1,0 +1,459 @@
+﻿/* By 5811.com.cn */
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+fieldset,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
+	margin: 0;
+	padding: 0;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+fieldset,
+img {
+	border: 0;
+}
+
+ol,
+ul {
+	list-style: none;
+}
+
+caption,
+th {
+	text-align: left;
+}
+
+q:before,
+q:after {
+	content: '';
+}
+
+abbr,
+acronym {
+	border: 0;
+}
+
+.clear {
+	clear: both;
+	display: block;
+	overflow: hidden;
+	visibility: hidden;
+	width: 0;
+	height: 0;
+}
+
+.l,
+.col-l,
+.col_l,
+.col-c,
+.col_c {
+	float: left;
+}
+
+.r,
+.col-r,
+.col_r,
+dt span,
+.ul-txt li span,
+.ul_txt li span {
+	float: right;
+}
+
+.c {
+	clear: both;
+}
+
+.n,
+em {
+	font-weight: normal;
+	font-style: normal;
+}
+
+.b {
+	font-weight: bold;
+}
+
+.i {
+	font-style: italic;
+}
+
+.fa {
+	font-family: Arial;
+}
+
+.fg {
+	font-family: Georgia;
+}
+
+.ft {
+	font-family: Tahoma;
+}
+
+.fl {
+	font-family: Lucida Console;
+}
+
+.fs {
+	font-family: '宋体';
+}
+
+.fw {
+	font-family: '微软雅黑';
+}
+
+.tc {
+	text-align: center;
+}
+
+.tr {
+	text-align: right;
+}
+
+.tl {
+	text-align: left;
+}
+
+.tdu {
+	text-decoration: underline;
+}
+
+.tdn,
+.tdn:hover,
+a.tdl:hover {
+	text-decoration: none;
+}
+
+.fc0 {
+	color: #000000;
+}
+
+.fc3 {
+	color: #333333;
+}
+
+body {
+	/*color: #555;
+	font-size: 14px;
+	font-family: "微软雅黑", "Microsoft Yahei";
+	background-color: #EEE;*/
+}
+
+a {
+	color: #555;
+}
+
+a:hover {
+	color: #f00;
+}
+
+input {
+	font-size: 14px;
+	font-family: "微软雅黑", "Microsoft Yahei";
+}
+
+.wrap {
+	width: 500px;
+	margin: 100px auto;
+}
+
+.h20 {
+	height: 20px;
+	overflow: hidden;
+	clear: both;
+}
+
+.nice-select {
+	width: 95%;
+	padding: 0 10px;
+	height: 40px;
+	/*border: 1px solid #999;*/
+	position: relative;
+	box-shadow: 0 0 5px #999;
+	background: #81a9c3 url(../image/a2.jpg) no-repeat right center;
+}
+
+.nice-select input {
+	display: block;
+	width: 100%;
+	height: 38px;
+	line-height: 38px;
+	border: 0;
+	outline: 0;
+	background: none;
+	color: white;
+	min-height: auto !important;
+}
+
+.nice-select ul {
+	width: 100%;
+	display: none;
+	position: absolute;
+	left: -1px;
+	top: 38px;
+	overflow: hidden;
+	background-color: #81a9c3;
+	max-height: 150px;
+	overflow-y: auto;
+	border: 1px solid #999;
+	border-top: 0;
+	box-shadow: 0 3px 5px #999;
+	z-index: 9999;
+}
+
+.nice-select ul li {
+	height: 30px;
+	line-height: 30px;
+	overflow: hidden;
+	padding: 0 10px;
+	cursor: pointer;
+}
+
+.nice-select ul li.on {
+	background-color: #e0e0e0;
+	color: black;
+}
+
+
+/*内容*/
+
+html,
+body {
+	height: 100%;
+}
+
+#wrap {
+	height: 100%;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-flex-flow: column;
+	flex-flow: column;
+	padding-bottom: 60px;
+}
+
+#header {
+	text-align: center;
+	background-color: #81a9c3;
+	color: #fff;
+	width: 100%;
+	position: fixed!important;
+	z-index: 999;
+	
+}
+
+#header h1 {
+	font-size: 20px;
+	height: 44px;
+	line-height: 44px;
+	margin: 0em;
+	color: #fff;
+}
+
+#header .header-li {
+	float: left;
+	width: 32%;
+	height: 44px;
+	line-height: 44px
+}
+
+#main {
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	flex: 1;
+	width: 100%;
+	margin: 0 auto;
+}
+
+#main .a-content {
+	padding-top: 60px;
+	width: 90%;
+	margin: 0 auto;
+	padding-bottom: 60px;
+}
+
+#main .aui-list {
+	border-top: 1px solid white;
+}
+
+#main .aui-list:before {
+	background-color: white;
+}
+
+#main .aui-list:after {
+	background-color: white;
+}
+
+#main .aui-list-header {
+	font-size: 16px;
+	font-weight: bold;
+	color: white;
+	height: 50px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-top: 1px solid white;
+	background-color: #53a298;
+}
+
+#main .aui-list-header .aui-list-header-page {
+	float: left;
+	width: 50%;
+	line-height: 40px;
+	text-indent: 6px;
+}
+
+#main .aui-list-header .aui-list-header-title {
+	float: left;
+	width: 50%;
+	line-height: 40px;
+}
+
+#main .aui-list-footer {
+	color: white;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	background-color: lightgray;
+	text-align: center;
+	height: 50px;
+	line-height: 50px;
+	background-color: #5ea62b;
+}
+
+#main .aui-list-item-inner {
+	width: 100%;
+}
+
+#main .aui-list-item-inner ul {
+	width: 100%;
+}
+
+#main .aui-list-item-rco li {
+	float: left;
+	width: 32%;
+}
+
+#main .aui-list-item-inner .textright {
+	text-align: right;
+}
+
+#main .aui-list-item-inner .textcontent {
+	text-align: center;
+}
+
+#main .aui-list-item-k,
+.aui-list-item-kong {
+	height: auto !important;
+	padding: 0 !important;
+	background-color: #5fc3d7;
+	color: white;
+}
+
+#main .aui-list-item-k,
+.aui-list-item-kong span {
+	background-color: #7c909b;
+	padding: 3px;
+	border-radius: 5px;
+}
+
+#main .aui-list-item-kong li {
+	float: left;
+	width: 50% !important;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	/*background-color: gold;*/
+	border-bottom: 1px solid lightgray;
+	border-right: 1px solid lightgray;
+}
+
+#main .aui-list-item-t {
+	height: auto !important;
+	background-color: #7c909b;
+	color: white;
+}
+
+#main .aui-list-item-t span {
+	padding: 5px;
+	border-radius: 5px;
+	background-color: #5fc3d7;
+}
+
+#main .aui-list-title {
+	float: left;
+	width: 20%;
+	height: 45px;
+	line-height: 45px;
+}
+
+#main .aui-list-content {
+	float: left;
+	width: 80%;
+	height: 45px;
+	line-height: 45px;
+}
+
+#main .aui-list-content li {
+	float: left;
+}
+
+#main .aui-list-content span {
+	padding: 3px;
+	margin-left: 2px;
+	background-color: orange;
+	border-radius: 5px;
+	color: white;
+	font-weight: bold;
+}
+
+#footer {
+	height: 30px;
+	line-height: 30px;
+	background-color: white;
+	width: 100%;
+	text-align: center;
+	border-bottom: 1px solid lightgray;
+	border-top: 1px solid lightgray;
+}
+
+#footer h5 {
+	color: white;
+}
+
+#footer .aui-active {
+	background-color: #53a298;
+	color: white;
+}
+
+#footer .aui-zhong {
+	border-left: 1px solid lightgray;
+	border-right: 1px solid lightgray;
+}
+
+.con {
+	font-size: 28px;
+	text-align: center;
+}
